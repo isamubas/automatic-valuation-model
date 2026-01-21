@@ -37,11 +37,11 @@ if action == "Show system memory":
 
 elif action == "Load sample data":
     st.header("Load sample data")
-    path = "small-realtor-data.csv"
-    if path.exists():
-        df = load_dataset(path)
+    path = "src/data/raw/small-realtor-data.csv"
+    if os.path.exists(path):
+        df = pd.read_csv(path)
         st.session_state["df"] = df
-        st.dataframe(df.head())
+        st.write("Data loaded!",df.head())
     else:
         st.error(f"Sample file not found: {path}")
 
