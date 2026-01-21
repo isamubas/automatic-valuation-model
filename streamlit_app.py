@@ -37,7 +37,7 @@ if action == "Show system memory":
 
 elif action == "Load sample data":
     st.header("Load sample data")
-    path = get_data_path("small-realtor-data.csv", "raw")
+    path = "small-realtor-data.csv
     if path.exists():
         df = load_dataset(path)
         st.session_state["df"] = df
